@@ -1,8 +1,9 @@
 {
-  "name": "e10gb-website",
+  "name": "e10gb.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/e10gb/e10gb_website_ver_1.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

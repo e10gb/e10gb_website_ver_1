@@ -9,7 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve static files from the dist folder
-app.use(express.static(path.join(__dirname, "dist")));
+app.use('/', express.static(path.join(__dirname, 'dist')));
+
 
 // Handle any other routes by returning index.html (for SPAs)
 app.get("*", (req, res) => {

@@ -1,35 +1,21 @@
-// server.js
 import express from "express";
 import path from "path";
-import dotenv from "dotenv";
-import cors from "cors";
+import { fileURLToPath } from "url";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 80; // Listen on HTTP port 80 so it's public
 
-dotenv.config();
-app.use(cors());
-app.use(express.json());
-app.use(express.static("dist")); // change to "build" if you're using `npm run build`
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Example route to handle form submission
-app.post("/contact", (req, res) => {
-  const { name, email, message } = req.body;
+// Serve static files from the dist folder
+app.use(express.static(path.join(__dirname, "dist")));
 
-  console.log("Contact Form Submission:");
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Message:", message);
-
-  // You can integrate email or database logic here
-  return res.status(200).json({ message: "Message received" });
-});
-
-// For any other route, serve the frontend (SPA fallback)
+// Handle any other routes by returning index.html (for SPAs)
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve("dist", "index.html"));
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server is running at http://159.89.33.214`);
 });

@@ -11,11 +11,16 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the dist directory
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Catch-all to serve index.html for SPA routes
+// Only serve index.html for routes that do NOT contain a dot (.)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  if (req.path.includes('.')) {
+    // If the request is for a file, let express.static handle it
+    res.status(404).end();
+  } else {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+  }
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://159.89.33.214`);
+  console.log(`Server running at http://localhost:${port}`);
 });

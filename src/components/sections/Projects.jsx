@@ -87,7 +87,7 @@ export const Projects = () => {
                 An algorithm that tries to guess a users chosen colour using different methods.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Tailwind CSS", "Vite", "JavaScript"].map(
+                {["Java"].map(
                   (tech, key) => (
                     <span
                       key={key}
@@ -116,7 +116,7 @@ export const Projects = () => {
                 A routing machine that calculates the best route between two points.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "API", "CSS", "HTML"].map((tech, key) => (
+                {["Java"].map((tech, key) => (
                   <span
                     key={key}
                     className="bg-pink-500/10 text-pink-500 py-1 px-3 rounded-full text-sm hover:bg-pink-500/20 

@@ -23,7 +23,7 @@ export const About = () => {
 
           <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
             <p className="text-gray-500 mb-6 text-center">
-              I'm a passtionate developer with experience in team envinronments and a strong interest in software engineering.
+              I'm a passionate developer with experience in team envinronments and a strong interest in software engineering.
               I'm ready to take on new challenges and learn new technologies.
 
             </p>

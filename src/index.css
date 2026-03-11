@@ -1,12 +1,5 @@
-@import "tailwindcss";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
+@import "tailwindcss";
 
 html,
 body {
@@ -48,6 +41,35 @@ html {
 
   .animate-loading-bar {
     animation: loading 0.8s ease infinite;
+  }
+
+  @keyframes crackGrow {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-crack-grow {
+    animation: crackGrow 0.3s ease-out forwards;
+  }
+
+  @keyframes crackAppear {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+      opacity: 0.6;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .animate-crack-appear {
+    animation: crackAppear 0.4s ease-out forwards;
   }
 }
 

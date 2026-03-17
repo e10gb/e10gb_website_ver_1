@@ -1,38 +1,29 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { useEffect } from "react";
 
 export const Home = () => {
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, 0);
+  
+  return () => clearTimeout(timer);
+}, []);
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative"
+      className="sticky top-0 min-h-screen flex items-center justify-center"
     >
       <RevealOnScroll>
-        <div className="text-center z-10 px-4">
-          <h1 className="text-5xl md:text-7xl font-bold font-poppins mb-10 bg-gradient-to-r from-pink-400 to-purple-300 bg-clip-text text-transparent leading-tight">
-  Hi, I'm Emily Gibbons
+<div className="flex flex-col gap-4 md:gap-8 text-left px-2">         
+   <h1 className="text-[20vw] md:text-[22vw] font-bold font-poppins mb-1 bg-pink-400 bg-clip-text text-transparent leading-[1.1] py-2">
+  Emily 
 </h1>
-
-
-
-          <p className="text-gray-800 text-lg mt-4 mb-8 max-w-lg mx-auto">
-            I'm a passionate pre-penultimate software engineering student at the University of Auckland. Scroll down to learn more about me and my work!
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="#projects"
-              className="bg-pink-500 text-white py-3 px-6 rounded font-bold transition-all duration-300 ease-in-out relative overflow-hidden hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
-            >
-              View Projects
-            </a>
-
-            <a
-              href="#contact"
-              className="border border-pink-500/50 text-pink-500 py-3 px-6 rounded font-bold transition-all duration-300 ease-in-out
-             hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-pink-500/10"
->
-              Contact Me
-            </a>
-          </div>
+<h1 className="text-[20vw] md:text-[22vw] font-bold font-poppins mb-1 bg-pink-400 bg-clip-text text-transparent leading-[1.1] py-2">
+   Gibbons
+</h1>
+       
         </div>
       </RevealOnScroll>
     </section>

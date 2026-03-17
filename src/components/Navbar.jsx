@@ -10,9 +10,9 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         <div className="flex justify-between items-center h-16">
           <a
             href="#home"
-            className="font-poppins text-xl font-bold text-gray-500 hover:text-pink-500 transition duration-300"
+            className="font-poppins text-xl font-bold text-gray-800 hover:text-pink-300 transition duration-300"
           >
-            e<span className="text-pink-500 hover:text-gray-500 transition duration-300">10</span>gb
+            e<span className="text-pink-300 hover:text-gray-800 transition duration-300">10</span>gb
           </a>
 
           <div
@@ -25,28 +25,28 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
-              className="text-gray-400 font-bold hover:text-gray-800 transition-colors"
+              className="text-pink-300 font-bold hover:text-gray-800 transition-colors"
             >
               {" "}
               Home
             </a>
             <a
               href="#about"
-              className="text-gray-400 font-bold hover:text-gray-800 transition-colors"
+              className="text-pink-300 font-bold hover:text-gray-800 transition-colors"
             >
               {" "}
               About{" "}
             </a>
             <a
               href="#projects"
-              className="text-gray-400 font-bold hover:text-gray-800 transition-colors"
+              className="text-pink-300 font-bold hover:text-gray-800 transition-colors"
             >
               {" "}
               Projects{" "}
             </a>
             <a
               href="#contact"
-              className="text-gray-400 font-bold hover:text-gray-800 transition-colors"
+              className="text-pink-300 font-bold hover:text-gray-800 transition-colors"
             >
               {" "}
               Contact{" "}

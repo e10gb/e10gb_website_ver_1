@@ -7,7 +7,8 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  background: #ffffff;
+  /* Use Tailwind pink-400 for the page background */
+  background: #fb65b2;
   color: #583343;
 }
 
@@ -82,4 +83,18 @@ html {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Hide scrollbars visually while preserving scroll behavior */
+/* Works across Chromium browsers, Firefox, and IE/Edge */
+html, body, #root {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

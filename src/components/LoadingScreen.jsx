@@ -10,6 +10,11 @@ export const LoadingScreen = ({ onComplete }) => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    // Hide body/html scrollbars while this full-screen loader is mounted
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     
     // Setup Hit Map
     const hitCanvas = document.createElement("canvas");
@@ -199,8 +204,12 @@ const createCrack = (startX, startY, startAngle, startStrength, depth = 0, origi
     handleResize();
 
     return () => {
+      // restore listeners
       window.removeEventListener("resize", handleResize);
       canvas.removeEventListener("mousedown", handleMouseDown);
+      // restore previous overflow values
+      document.body.style.overflow = prevBodyOverflow || "";
+      document.documentElement.style.overflow = prevHtmlOverflow || "";
     };
   }, [onComplete]);
 
@@ -214,16 +223,6 @@ const createCrack = (startX, startY, startAngle, startStrength, depth = 0, origi
           transform: `translate(${jitter.x}px, ${jitter.y}px)`,
           transition: "transform 0.05s ease-out"
         }} 
-      />
-      {/* White flash overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "white",
-          opacity: flashOpacity,
-          pointerEvents: "none"
-        }}
       />
     </div>
   );

@@ -13,7 +13,7 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="sticky top-0 min-h-screen flex items-center justify-center"
+      className="sticky top-0 min-h-screen flex items-center justify-center z-0"
     >
       <RevealOnScroll>
 <div className="flex flex-col gap-4 md:gap-8 text-left px-2">         

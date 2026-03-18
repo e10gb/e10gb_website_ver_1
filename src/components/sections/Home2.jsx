@@ -6,7 +6,7 @@ export const Home2 = () => {
       id="home2"
       className="min-h-screen flex items-center justify-center relative bg-pink-400"
     >
-      <div style={{ height: '2000px' }} />
+      <div style={{ height: '1500px' }} />
         <div className="text-left z-10 px-2">
           <h1 className="text-[35vw] md:text-[33vw] font-bold font-poppins mb-20 bg-black bg-clip-text text-transparent">
   e10gb 

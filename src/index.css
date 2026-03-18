@@ -8,6 +8,8 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   background: #fb65b2;
+  /* Prevent horizontal scrolling site-wide */
+  overflow-x: hidden;
   color: #583343;
 }
 
@@ -89,6 +91,13 @@ html {
 html, body, #root {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* Make media and wide elements safe so they don't cause horizontal overflow */
+img, picture, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 html::-webkit-scrollbar,
